@@ -1,19 +1,28 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.13;
 
+import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
+
 enum FundState {
     OPEN_TO_INVESTORS,
     TRADING,
     CLOSED
 }
 
-contract PolkaFund {
+contract PolkaFund is Ownable {
     FundState public state;
     address payable public immutable manager;
     address payable[] public investors;
     mapping(address => uint256) public investorDeposits;
     uint256 public totalDeposited = 0;
     uint8 public performanceFeePercent;
+
+    constructor(address _manager, uint8 _performanceFeePercent) Ownable(_manager) {
+        require(_performanceFeePercent < 100, "Performance fee percentage must be less than 100%");
+        state = FundState.OPEN_TO_INVESTORS;
+        manager = payable(_manager);
+        performanceFeePercent = _performanceFeePercent;
+    }
 
     function returnInvestmentsWithProfit() public {
         // ensure this is only called by the sceduler
