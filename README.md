@@ -25,7 +25,7 @@ PolkaFunds makes investment management trustless through smart contract logic, b
 
 ## Technical Description
 This project is made possible by the following EVM+ feature of Acala:
-- Native DEX: providing investment managers have access to the liquidity of the native DEX Acala Swap
+- Native DEX: providing investment managers access to the liquidity of the native DEX (Acala Swap)
 - On-Chain Scheduler: providing guaranteed return of invested funds with profits after a set period
 
 This project has been setup using the Foundry project template, and used the following libraries:
