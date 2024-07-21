@@ -6,7 +6,7 @@
 
 
 ## Presentation
-https://www.canva.com/...
+https://canva.com/design/DAGLUJN9Dc4/k0JHCX-Ua0rxyETTw5Mefg/view
 
 ## Short Description
 PolkaFund is an dApp that enables secure and trustless token investment management using Acala Swap. 
